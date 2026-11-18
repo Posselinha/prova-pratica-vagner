@@ -13,20 +13,34 @@ Nome completo: **\*\*\*\***\*\***\*\*\*\***\_\_**\*\*\*\***\*\***\*\*\*\*** RA: 
 
 **Em que consiste o problema, e o que acontece quando o sistema cresce:**
 
+O problema referente à conversão acontece por conta de que a equipe de desenvolvimento anterior criou o serviço "InventarioLegadoWS" fazendo uso de matriz de texto e realizando a códificação da situação em letra. Com o passar do tempo e com o crescimento do sistema, a conversão do formato foi escrita em dois lugares, e isso fez com que esses dois lugares acabassem se divergindo, visto que uma está tratando com letra minuscula e a outra não, fazendo a possibilidade de itens aparecerem como indisponiveis no catalogo mas disponiveis no relatorio.
+
 **Princípio SOLID violado:**
+
+O principal princípio solid violado foi o SRP, pois as classes estão acumulando a regra e negocios com a responsabilidade de interpretar e converter os dados. Também está sendo violado o DIP, visto que módulos de alto nível dependem da classe "InventarioLegadoWS" em vez de uma abstração.
 
 **Classes afetadas (pelo nome):**
 
+As classes afetadas são "CatalogoEquipamentos" e "RelatorioAcervo"
+
 **Que outra dependência indevida essas classes têm em relação ao
 inventario patrimonial, e por que ela é um problema:**
+
+As classes dependem diretamente da estrutura da matriz, e isso se em outro dia o sistema chegar a alterar o layout das colunas da matriz, tudo que depende eles irá quebrar.
 
 ## Problema 2 — o ciclo de vida de Reserva
 
 **Em que consiste o problema, e o que acontece quando o sistema cresce:**
 
+O problema do ciclo de vida de Reserva ocorre por conta da utilização das estruturas condicionais if e else espalhados nos métodos publicos. E conforme o sistema cresce, pode chegar a surgir novos estados e assim criando a necessidade de aumentar a estrutura condicional, gereando um acoplamento no código e grande probabilidade de erros.
+
 **Princípio SOLID violado:**
 
+O principal príncipio violado foi o OCP, pois a classe "Reserva" não está fechada para modificações, e também está sendo violado o SRP por conta de que ela está acumulando responsabilidades
+
 **Classes afetadas (pelo nome):**
+
+Estão sendo afetadas a classe "Reserva"
 
 ---
 
