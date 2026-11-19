@@ -8,7 +8,7 @@ public class CatalogoEquipamentos {
     private final Inventario inventario;
 
     public CatalogoEquipamentos(Inventario inventario) {
-        this.inventario = inventario
+        this.inventario = inventario;
     }
 
     public List<Equipamento> listarDisponiveis() {
