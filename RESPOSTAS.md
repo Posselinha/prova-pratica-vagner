@@ -50,14 +50,22 @@ Estão sendo afetadas a classe "Reserva"
 
 **O problema que ele resolve (descreva antes de nomear o padrão):**
 
+A utilização do padrão Adapter permite converter a interface de uma classe existente na que o cliente espera, resolvendo a incompatibilidade dos dados com o código legado que havia sido criado pela outra equipe de desenvolvimento, permitindo unificar a conversão de formatado em um unico componente
+
 **Nome do padrão:**
+Adapter
 
 **Alternativa descartada e por que ela não resolveria por completo:**
+A outra alternativa seria alterar diretamente a classe Legado, mas não pode ser realizado por conta de que ela foi desenvolvida por outra equipe e já estava integrada dentro do sistema, tendo que sua alteração poderia gerar incompatibilidade em outras partes do sistema.
 
 ## Padrão aplicado ao Problema 2
 
 **O problema que ele resolve (descreva antes de nomear o padrão):**
+Foi utilizado o padrão State que permite mudar o comportamento de um objeto conforme seu estado, ela foi utilizada para resolver o problema de acoplamento gerado pelo uso do bloco condicional If else dentro de reserva
 
 **Nome do padrão:**
+State
 
 **Alternativa descartada e por que ela não resolveria por completo:**
+
+Caso fosse trocado o String por Enum, isso ainda estaria mantendo a violação do padrão OCP com o uso do bloco condicional If Else. Não resolvendo assim o problema por completo
